@@ -9,6 +9,7 @@ import {useToast} from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {Input} from "@/components/ui/input";
 
 const MeetingTypeList = () => {
     const router = useRouter();
@@ -82,14 +83,14 @@ const MeetingTypeList = () => {
                 handleClick={() => setMeetingState('isScheduleMeeting')}
             />
             <HomeCard
-                className='bg-yellow-1'
+                className='bg-purple-1'
                 img='/icons/recordings.svg'
                 title='View recordings'
                 description='Check out your recordings'
                 handleClick={() => router.push('/recordings')}
             />
             <HomeCard
-                className='bg-purple-1'
+                className='bg-yellow-1'
                 img='/icons/join-meeting.svg'
                 title='Join meeting'
                 description='Via invitation link'
@@ -144,6 +145,19 @@ const MeetingTypeList = () => {
                 buttonText='Start meeting'
                 handleClick={createMeeting}
             />
+            <MeetingModal
+                isOpen={meetingState === 'isJoiningMeeting'}
+                onClose={() => setMeetingState(undefined)}
+                title='Paste the link of the meeting'
+                className='text-center'
+                buttonText='Join meeting'
+                handleClick={() => router.push(values.link)}
+            >
+                <Input
+                    onChange={(e) => setValues({...values, link: e.target.value})}
+                    className='border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0'
+                    placeholder='Meeting link'/>
+            </MeetingModal>
         </section>
     );
 };

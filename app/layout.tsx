@@ -9,7 +9,7 @@ import '@stream-io/video-react-sdk/dist/css/styles.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YOOM",
+  title: "Meeting App",
   description: "Modern video calling app",
     icons: {
       icon: '/icons/logo.svg',

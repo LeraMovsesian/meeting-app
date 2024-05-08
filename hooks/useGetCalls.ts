@@ -12,9 +12,9 @@ export const useGetCalls = () => {
         const fetchCalls = async () => {
             if (!client || !user) return;
 
-            setIsLoading(true);
 
             try {
+                setIsLoading(true);
                 const {calls} = await client.queryCalls(
                     {
                         sort: [{field: 'starts_at', direction: -1}],
@@ -28,12 +28,12 @@ export const useGetCalls = () => {
                     });
 
                 setCalls(calls);
+                setIsLoading(false);
+
             } catch (error) {
                 setIsLoading(false);
                 console.error(error);
             }
-            setCalls(calls);
-            setIsLoading(false)
         }
 
         fetchCalls();

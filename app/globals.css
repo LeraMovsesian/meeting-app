@@ -52,8 +52,19 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-.cl-userButtonPopoverActionButtonIcon {
+.cl-userButtonPopoverActionButtonIcon,
+.cl-alternativeMethodsBlockButtonText,
+.cl-navbarButton,
+.cl-avatarImageActionsUpload {
   color: white;
+}
+
+.cl-userButtonPopoverActionButton:hover {
+  color: white;
+}
+
+.cl-badge {
+  color: #0b7af9;
 }
 
 .cl-logoBox {
@@ -79,7 +90,21 @@
   filter: invert(1);
 }
 
-/* =============================== */
+.cl-userButtonPopoverFooter {
+  display: none;
+}
+
+.cl-navbar > div:last-child {
+  display: none;
+}
+
+.cl-footer > div:last-child {
+  display: none;
+}
+
+.cl-socialButtonsIconButton {
+  border: 1px solid #565761 !important;
+}
 
 @layer utilities {
   .flex-center {
@@ -90,6 +115,7 @@
     @apply flex justify-between items-center;
   }
 }
+
 
 .show-block {
   width: 100%;

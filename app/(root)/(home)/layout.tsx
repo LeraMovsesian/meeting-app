@@ -4,7 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "YOOM",
+    title: "Meeting App",
     description: "Modern video calling app",
     icons: {
         icon: '/icons/logo.svg',
